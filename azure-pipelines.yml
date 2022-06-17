@@ -1,4 +1,14 @@
 # Maven package Java project Web App to Linux on Azure
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Azure500internalSubscription (383c93c9-4dc0-4eb0-acaa-1fdb293ba1b6)'
+    subscriptionId: '383c93c9-4dc0-4eb0-acaa-1fdb293ba1b6'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'vaultRG1'
+    location: 'East US'
+    templateLocation: 'Linked artifact'
+    deploymentMode: 'Incremental'
 # Build your Java project and deploy it to Azure as a Linux web app
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
